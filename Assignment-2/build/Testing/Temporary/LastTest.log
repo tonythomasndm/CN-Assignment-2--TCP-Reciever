@@ -1,0 +1,80 @@
+Start testing: Oct 10 23:07 IST
+----------------------------------------------------------
+20/23 Testing: fsm_stream_reassembler_holes
+20/23 Test: fsm_stream_reassembler_holes
+Command: "/home/tonythomasndm/cn-assignment/cn-assignment2/2021360-TonyThomas-Assignment2/build/tests/fsm_stream_reassembler_holes"
+Directory: /home/tonythomasndm/cn-assignment/cn-assignment2/2021360-TonyThomas-Assignment2/build/tests
+"fsm_stream_reassembler_holes" start time: Oct 10 23:07 IST
+Output:
+----------------------------------------------------------
+a:0
+:0
+a:1
+:1
+b:0
+:1
+b:1
+:2
+a:0
+:0
+a:1
+:1
+b:0
+:1
+b:1
+:2
+ab:0
+:0
+ab:2
+:2
+:0
+:2
+:0
+:2
+a:0
+:0
+a:1
+:1
+b:0
+:1
+b:1
+:2
+c:0
+:2
+c:1
+:3
+d:0
+:3
+d:1
+:4
+Tonyabc:0
+:0
+abc:3
+:3
+Test Failure on expectation:
+	Action:      substring submitted with data "abc", index `0`, eof `0`
+
+Failure message:
+	basic_string::substr: __pos (which is 2) > this->size() (which is 1)
+
+List of steps that executed successfully:
+	Initialized (capacity = 65000)
+	Action:      substring submitted with data "b", index `1`, eof `0`
+	Expectation: net bytes assembled = 0
+	Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+	Expectation: not at EOF
+	Action:      substring submitted with data "d", index `3`, eof `0`
+	Expectation: net bytes assembled = 0
+	Expectation: stream_out().buffer_size() returned 0, and stream_out().read(0) returned the string ""
+	Expectation: not at EOF
+
+Exception: The test caused your implementation to throw an exception!
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Failed.
+"fsm_stream_reassembler_holes" end time: Oct 10 23:07 IST
+"fsm_stream_reassembler_holes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 10 23:07 IST
